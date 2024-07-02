@@ -3,11 +3,24 @@ dbt_demo:
     dev:
       account: yafguxq-ae88061
       database: dbt_db
-      password: *****
+      password: ***
       role: FIVETRAN_ROLE
       schema: DBT_TEST
       threads: 10
       type: snowflake
-      user: *****
+      user: ***
       warehouse: FIVETRAN_WAREHOUSE
   target: dev
+elementary:
+  target: elementary
+  outputs:
+    elementary:
+      account: yafguxq-ae88061
+      database: pipeline_logs
+      password: ***
+      role: FIVETRAN_ROLE
+      schema: dbt_elementary
+      threads: 10
+      type: snowflake
+      user: ***
+      warehouse: FIVETRAN_WAREHOUSE
