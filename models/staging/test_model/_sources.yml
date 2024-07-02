@@ -1,0 +1,12 @@
+
+version: 2
+
+sources:
+  - name: test_source
+    database: |
+      {%- if target.name == "stage" -%} mdmdb
+      {%- else -%} FIVETRAN_DATABASE
+      {%- endif -%}
+    schema: google_sheets
+    tables:
+      - name: test

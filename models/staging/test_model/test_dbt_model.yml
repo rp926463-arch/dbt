@@ -1,0 +1,11 @@
+
+version: 2
+
+models:
+  - name: test_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: growth_rate
+        description: "population growth rate"
+        data_tests:
+          - not_null

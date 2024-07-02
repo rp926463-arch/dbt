@@ -1,0 +1,13 @@
+dbt_demo:
+  outputs:
+    dev:
+      account: yafguxq-ae88061
+      database: dbt_db
+      password: *****
+      role: FIVETRAN_ROLE
+      schema: DBT_TEST
+      threads: 10
+      type: snowflake
+      user: *****
+      warehouse: FIVETRAN_WAREHOUSE
+  target: dev
