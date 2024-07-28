@@ -5,8 +5,31 @@ sources:
   - name: test_source
     database: |
       {%- if target.name == "stage" -%} mdmdb
-      {%- else -%} FIVETRAN_DATABASE
+      {%- else -%} DBT_TEST
       {%- endif -%}
-    schema: google_sheets
+    schema: seeds
+
+    freshness:
+      warn_after: {count: 20, period: day}
+      error_after: {count: 30, period: day}
+      filter: datediff('minute', datetime, current_timestamp) < 40
+
+    # check timezone in snowflake using 'show parameters like '%timezone%';'
+    # loaded_at_field expects timezone to be in UTC format, below is a conversion
+    loaded_at_field: "convert_timezone('America/Los_Angeles', 'UTC', datetime)"
+
     tables:
-      - name: test
+      - name: seattle
+        description: 'You already know'
+        columns:
+          - name: datatype
+          - name: datasubtype
+          - name: datetime
+          - name: category
+          - name: subcategory
+          - name: status
+          - name: address
+          - name: lattitude
+          - name: longitude
+          - name: source
+          - name: extendedproperties

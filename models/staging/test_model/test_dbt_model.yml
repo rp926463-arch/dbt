@@ -3,9 +3,14 @@ version: 2
 
 models:
   - name: test_dbt_model
-    description: "A starter dbt model"
+    description: '{{ doc("table_events") }}'
     columns:
-      - name: growth_rate
-        description: "population growth rate"
+      - name: address
+        description: "address"
         data_tests:
           - not_null
+
+      - name: category
+        description: "response category"
+        tests:
+          - is_aid_response_given

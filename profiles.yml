@@ -1,26 +1,26 @@
 dbt_demo:
   outputs:
     dev:
-      account: yafguxq-ae88061
-      database: dbt_db
+      account: blqsppw-ha53517
+      database: dbt_test
       password: ***
-      role: FIVETRAN_ROLE
-      schema: DBT_TEST
+      role: ACCOUNTADMIN
+      schema: seeds
       threads: 10
       type: snowflake
       user: ***
-      warehouse: FIVETRAN_WAREHOUSE
+      warehouse: COMPUTE_WH
   target: dev
 elementary:
   target: elementary
   outputs:
     elementary:
-      account: yafguxq-ae88061
+      account: blqsppw-ha53517
       database: pipeline_logs
       password: ***
-      role: FIVETRAN_ROLE
+      role: ACCOUNTADMIN
       schema: dbt_elementary
       threads: 10
       type: snowflake
       user: ***
-      warehouse: FIVETRAN_WAREHOUSE
+      warehouse: COMPUTE_WH

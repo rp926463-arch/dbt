@@ -3,18 +3,14 @@ with
 
 source_data as (
 
-    select * from {{ source('test_source', 'test') }}
+    select * from {{ source('test_source', 'seattle') }}
 
 ),
 
 final as (
-    select id
-    , growth_rate
-    , population_density
-    , popu_1_ation_growth_rate
-    , "YEAR"
-
-    from source_data
+    select *
+    , {{ var('current_timestamp') }} as batch_time
+    from source_data limit 10
 )
 
 select * from final

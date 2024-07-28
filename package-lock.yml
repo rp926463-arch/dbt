@@ -5,6 +5,8 @@ packages:
     version: 1.2.0
   - package: brooklyn-data/dbt_artifacts
     version: 2.6.3
+  - package: elementary-data/elementary
+    version: 0.15.2
   - package: calogica/dbt_date
     version: 0.10.1
-sha1_hash: e1e9d4d0c35897c6b8bb13d68407a21d51783631
+sha1_hash: 0dfb8e7921bbf7e02dc584c304dc0925fec65e03
