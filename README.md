@@ -28,4 +28,10 @@ Useful commands for 1st time in your project
 * Command to chech [source freshness](https://docs.getdbt.com/reference/resource-properties/freshness) (refer to file models/staging/test_model/_sources.yml)
   _ dbt source snapshot-freshness
   
-* Query tags
+* [Query tags](https://docs.getdbt.com/reference/resource-configs/snowflake-configs)
+
+* DBT state command
+  _ dbt ls --models state:modified --state .
+  _ dbt run --models state:modified --state .
+  
+* [DBT Multi repo approach](https://docs.getdbt.com/docs/build/packages#how-do-i-add-a-package-to-my-project)

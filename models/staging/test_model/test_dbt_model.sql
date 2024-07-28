@@ -1,3 +1,8 @@
+{{
+    config(
+        query_tag = 'dbt_special'
+    )
+}}
 
 with
 

@@ -10,6 +10,8 @@ dbt_demo:
       type: snowflake
       user: ***
       warehouse: COMPUTE_WH
+      client_session_keep_alive: False
+      query_tag: warehouse
   target: dev
 elementary:
   target: elementary
