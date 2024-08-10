@@ -53,7 +53,9 @@ models:
       test_model:
         +materialized: table
         +schema: staging
-        +query_tag: test_model
+        +tags:
+          - p1
+          - another_tag
 
 on-run-start:
   - "{{ insert_audits('null', 'run_start') }}"

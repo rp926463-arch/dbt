@@ -7,3 +7,5 @@ packages:
     version: 2.6.3
   - package: elementary-data/elementary
     version: 0.15.2
+  - package: dbt-labs/dbt_external_tables
+    version: 0.9.0

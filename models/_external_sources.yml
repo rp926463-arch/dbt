@@ -1,0 +1,35 @@
+
+version: 2
+
+sources:
+  - name: ext_sources
+    database: external_tables
+    schema: ext_by_dbt
+    loader: s3
+    tables:
+      - name: ext_dbt_seattle
+        external:
+          location: '@aws_s3_stage'
+          file_format: external_tables.s3_tables.parquet_format
+          auto_refresh: false
+          infer_schema: false
+          ignore_case: true
+        columns:
+          - name: DATATYPE
+            data_type: string
+          - name: DATASUBTYPE
+            data_type: string
+          - name: DATETIME
+            data_type: string
+          - name: CATEGORY
+            data_type: string
+          - name: SUBCATEGORY
+            data_type: string
+          - name: STATUS
+            data_type: string
+          - name: ADDRESS
+            data_type: string
+          - name: LATITUDE
+            data_type: string
+          - name: LONGITUDE
+            data_type: string

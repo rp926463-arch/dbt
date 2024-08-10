@@ -35,3 +35,27 @@ Useful commands for 1st time in your project
   _ dbt run --models state:modified --state .
   
 * [DBT Multi repo approach](https://docs.getdbt.com/docs/build/packages#how-do-i-add-a-package-to-my-project)
+
+* We can use [DBT tags](https://docs.getdbt.com/reference/resource-configs/tags) to run models
+  _ dbt run --models tag:my_tag
+  _ dbt seed --select tag:my_tag
+  _ dbt snapshot --select tag:my_tag
+  _ dbt run -m tag:p1 exclude tag:special
+  
+* [Materialization](https://docs.getdbt.com/docs/build/materializations)
+  _ table
+  _ view
+  _ incremental
+  _ ephemeral (is basically a cte)
+  _ materialized view
+  
+* Out of the box Benefits of DBT cloud
+  _ Monitoring of data source(data freshness)
+  _ Hosting documentation
+  _ Enabling automatic CI checks
+  
+* [DBT Analyses](https://docs.getdbt.com/docs/build/analyses)
+  _ if you dont want to materialize your query then jija queries can be placed here & get compiled
+  
+* [Generate External tables dbt package](https://hub.getdbt.com/dbt-labs/dbt_external_tables/latest/)
+  _ Can use this package to pull data from different sources as external tables
